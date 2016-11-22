@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebPainTool</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="remodal/remodal.css">
+	<link rel="stylesheet" href="remodal/remodal-default-theme.css">
+</head>
+<body style='margin: 0'>
+
+<div id="toolbar">
+		<div id="rad">
+			Толщина <span id="radval"> 10 </span>
+			<div class="radcontrol" id="dec" > - </div>
+			
+			<div class="radcontrol" id="inc"> + </div>
+			<div class="radcontrol" id="dec1" > -5 </div>
+			<div class="radcontrol" id="inc1"> +5</div>
+		</div>
+		<div id="colors">
+			<div class="swatch active"  id="scolor1" style="background-color: black;"></div>
+			<div class="swatch" 		id="scolor2" style="background-color: red;"></div>
+			<div class="swatch" 		id="scolor3" style="background-color: blue;"></div>
+			<div class="swatch" 		id="scolor4" style="background-color: #00FF00;"></div>
+			<div class="swatch" 		id="scolor5" style="background-color: yellow;"></div>
+			<div class="swatch" 		id="scolor6" style="background-color: #FF009D;"></div>
+			<div class="swatch" 		id="scolor7" style="background-color: #FF8100;"></div>
+			<div class="swatch" 		id="scolor8" style="background-color: #00A7FF;"></div>
+			<div class="swatch" 		id="scolor9" style="background-color: #B900FF;"></div>
+			<div class="swatch" 		id="scolor10" style="background-color:#FFFFFF;"></div>
+		</div>
+		<div id="colorsB" data-remodal-target="color" >
+			Colors+
+		</div>
+
+		<div id="save">
+			Save
+		</div>
+		
+		<div id="info" data-remodal-target="help" >
+			Help
+		</div>
+
+		<div id="info" data-remodal-target="reset" >
+			Reset
+		</div>
+
+		<div class="drawstyle" id="linedraw" >
+			Line Draw
+		</div>
+		<div class="drawstyle drawstyleactive" id="normaldraw" >
+			Normal Draw
+		</div>
+
+	</div>
+
+
+	<canvas id="canvas" style="display: block;">
+		Ваш браузер гавно и не поддерживает рисование 
+	</canvas>
+
+<div class="remodal" data-remodal-id="help">
+  <h1>Help</h1>
+  <h3>
+    Автор: Кожанов Нуржан.
+  </h3>
+  <p>
+    Используйте кнопки "+","-","+5","-5" в меню, а так же кнопки "-" и "+" на клавиатуре, для изменения толщины линии.
+  </p>
+    <p>
+    Нажмите кнопки "1-9" на Numpad'e, чтобы поменять цвет.
+  </p>
+  <p>
+    нажмите кнопку "Enter" для того, чтобы сохранить образ изображения.
+  </p>
+    <p>
+    Нажмите кнопку "Backspace" для того, чтобы загрузить сохранённый образ.
+  </p>
+  <p>
+    Нажмите кнопку "Save" для того, чтобы открыть картинку в новой вкладке и сохранить как изображение.
+  </p>
+  <br>
+  <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+</div>
+
+<div class="remodal" data-remodal-id="reset">
+  <h1>Reset</h1>
+  <p>
+    Вы правда хотите начать заного ?
+  </p>
+  <br>
+  <button data-remodal-action="confirm" class="remodal-confirm" id ="resetButton">Да</button>
+  <button data-remodal-action="cancel" class="remodal-cancel">Нет</button>
+</div>
+
+<div class="remodal" data-remodal-id="color">
+  <h1>Color+</h1>
+  <p>
+  	Здесь вы можете указать любой цвет: <br/>
+    <input type="text" name="colorchange" /> <br/>
+    Просто введите значение цвета в 16ричном коде или в формате RGB(a).
+    Вы так же можете ввести названия основных цветов (black,red, blue, #00FF00, yellow, #FF009D, #FF8100, #00A7FF, #B900FF, white ...и т.д.)
+  </p>
+  <br>
+  <button data-remodal-action="confirm" class="remodal-confirm" id ="colorButton">Принять</button>
+  <button data-remodal-action="cancel" class="remodal-cancel">Отмена</button>
+</div>
+
+
+	<script src="js/js.js" id="scriptsrc"></script>
+
+		<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="remodal/remodal.min.js"></script>
+
+</body>
+</html>
+
+<!-- 
+<div id="toolbar">
+		<div id="rad">
+			Raduis <span id="radval"> 10 </span>
+			<div class="radcontrol" id="inc"></div>
+			<div class="radcontrol" id="dec" ></div>
+		</div>
+	</div>
